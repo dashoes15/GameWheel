@@ -1,3 +1,5 @@
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+
 import java.util.ArrayList;
 
 public class GameWheel {
@@ -35,22 +37,30 @@ public class GameWheel {
     private ArrayList<Slice> blue = new ArrayList<Slice>();
     private ArrayList<Slice> black = new ArrayList<Slice>();
 
-    Slice obj = new Slice();
-    public GameWheel(){
-        for (int i = 0; i < slices.size(); i++) {
-            if (i == 5 || i == 0 || i == 10 || i ==15) {
-                colour.equals("black");
-                prizeAmount = i*5000;
 
+    public GameWheel(){
+        for (int i = 0; i < 20; i++) {
+            if (i == 5 || i == 0 || i == 10 || i ==15) {
+                slices.add(i, new Slice("Black", i*1000));
+            }else if (i%2 == 1){
+                slices.add(i, new Slice("Red", i*200));
+            }else{
+                slices.add(i, new Slice("Blue", i*100));
             }
         }
     }
 
-    public String toString(){
-
+    public String toString() {
+        String x = "";
+        for (int i = 0; i < slices.size(); i++) {
+            x = slices.get(i).toStringSlice();
+        }
+        return x;
     }
     public void split(){
+        for (int i = 0; i < slices.size(); i++) {
 
+        }
     }
     public void scramble(){
 
