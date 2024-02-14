@@ -9,7 +9,7 @@ public class Slice {
     }
 
     // Returns the cash prize in dollars for this slice
-    public int getPrizeAmount() {
+    public static int getPrizeAmount() {
         return prizeAmount;
     }
 
